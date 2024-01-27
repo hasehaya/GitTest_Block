@@ -41,4 +41,15 @@ public class Paddle :MonoBehaviour
     {
         return IsTouchingLeft() || IsTouchingRight();
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+            float x = collision.transform.position.x - transform.position.x;
+            float y = collision.transform.position.y - transform.position.y;
+            rb.velocity = new Vector3(x, y, 0).normalized * rb.velocity.magnitude;
+        }
+    }
 }
