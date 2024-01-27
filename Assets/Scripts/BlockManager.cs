@@ -22,8 +22,8 @@ public class BlockManager :MonoBehaviour
     float width = 0.85f;
     float height = 0.35f;
 
-    int rows = 2; // —ñ
-    int columns = 2; // s
+    int rows = 4; // —ñ
+    int columns = 8; // s
 
     List<Block> blocks = new List<Block>();
     void Start()

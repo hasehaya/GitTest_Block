@@ -12,10 +12,4 @@ public class Ball :MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.velocity = new Vector3(speed, speed, 0);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
