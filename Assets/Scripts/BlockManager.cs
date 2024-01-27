@@ -5,13 +5,25 @@ using UnityEngine;
 
 public class BlockManager :MonoBehaviour
 {
+    private static BlockManager instance;
+    public static BlockManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<BlockManager>();
+            }
+            return instance;
+        }
+    }
     [SerializeField] GameObject blockPrefab;
 
     float width = 0.85f;
     float height = 0.35f;
 
-    int rows = 4; // óÒ
-    int columns = 7; // çs
+    int rows = 2; // óÒ
+    int columns = 2; // çs
 
     List<Block> blocks = new List<Block>();
     void Start()
@@ -28,8 +40,12 @@ public class BlockManager :MonoBehaviour
         }
     }
 
-    void Update()
+    public void RemoveBlock(Block block)
     {
-
+        blocks.Remove(block);
+        if (blocks.Count == 0)
+        {
+            Debug.Log("Game Clear!");
+        }
     }
 }

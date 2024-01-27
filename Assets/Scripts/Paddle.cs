@@ -14,7 +14,7 @@ public class Paddle :MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         width = boxCollider.size.x;
     }
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButton(0))
         {
